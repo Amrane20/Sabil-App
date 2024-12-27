@@ -13,8 +13,7 @@ class LoginBtn extends StatelessWidget {
     final user = Provider.of<UserProvider>(context);
     return InkWell(
       onTap: () {
-        // userInfo gets the user login and store them in the userprovider
-        // user.userInfo(email, password);
+        // Signing function 
         user.signIn(email, password);
       },
       child: Container(

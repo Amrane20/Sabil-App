@@ -11,9 +11,9 @@ class StudentBtn extends StatelessWidget {
     final user = Provider.of<UserProvider>(context);
     return Expanded(
       child: InkWell(
+        // 
         onTap: () {
           user.setUserType(UserType.student,context);
-          // print(user.selectedUserType?.name);
         },
         child: Container(
           width: MediaQuery.of(context).size.width * 0.6,

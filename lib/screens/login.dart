@@ -61,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: 'example@taalim.ma',
                         obscureText: false,
                         iconField: Icons.mail,
+                        icon: true,
                       ),
                       const SizedBox(
                         height: 24.0,
@@ -70,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                         hintText: '**************',
                         obscureText: true,
                         iconField: Icons.remove_red_eye,
+                        icon: true,
                       ),
                       const SizedBox(
                         height: 8.0,

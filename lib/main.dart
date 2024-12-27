@@ -5,6 +5,8 @@ import 'package:sabil/screens/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sabil/model/user_provider.dart';
 import 'package:sabil/screens/onboarding.dart';
+import 'package:sabil/screens/student_academic_info.dart';
+import 'package:sabil/screens/student_personal_info.dart';
 
 // Define custom colors
 const Color primaryColor = Color(0xFF2B3990); // Royal Blue
@@ -53,7 +55,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: UserOptioln(),
+      home: StudentAcademicInfo(),
     );
   }
 }
