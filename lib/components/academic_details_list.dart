@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:sabil/model/user_provider.dart';
 
 class AcademicDetailsList extends StatelessWidget {
-  const AcademicDetailsList({Key? key}) : super(key: key);
+  const AcademicDetailsList({super.key});
 
   @override
   Widget build(BuildContext context) {

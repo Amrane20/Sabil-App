@@ -6,16 +6,21 @@ import 'package:sabil/model/user_provider.dart';
 class LoginBtn extends StatelessWidget {
   String email;
   String password;
-  LoginBtn({super.key, required this.email, required this.password});
+  final VoidCallback onTaped; 
+  LoginBtn({super.key, required this.email, required this.password, required this.onTaped});
 
   @override
   Widget build(BuildContext context) {
     final user = Provider.of<UserProvider>(context);
     return InkWell(
-      onTap: () {
-        // Signing function 
-        user.signIn(email, password);
-      },
+      // onTap: () {
+      //   // Signing function 
+      //   if (_formKey.currentState!.validate()) {
+      //     user.login(email,password);
+      //   }
+        
+      // },
+      onTap: onTaped,
       child: Container(
         width: double.infinity,
         height: 56.0,
@@ -30,7 +35,7 @@ class LoginBtn extends StatelessWidget {
                 style: GoogleFonts.poppins(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w400,
-                    color: Color(0xffEFE6FD))),
+                    color: const Color(0xffEFE6FD))),
             const SizedBox(
               width: 16.0,
             ),

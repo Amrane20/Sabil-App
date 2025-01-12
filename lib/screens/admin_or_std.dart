@@ -32,7 +32,7 @@ class UserOptioln extends StatelessWidget {
                 style: GoogleFonts.poppins(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xff333333),
+                  color: const Color(0xff333333),
                 ),
               ),
               Text(
@@ -40,7 +40,7 @@ class UserOptioln extends StatelessWidget {
                 'What Type of User Are You?',
                 style: GoogleFonts.montserrat(
                   fontSize: 16.0,
-                  color: Color(0xff4B4B4B),
+                  color: const Color(0xff4B4B4B),
                 ),
               ),
               const SizedBox(

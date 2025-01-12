@@ -1,0 +1,5 @@
+the virtual environment is not working , because of of PowerShell's execution policy,
+which prevents certain scripts from running by default. To fix this, you'll need to modify the execution policy to allow running scripts.
+
+Solution : Change the Execution Policy Temporarily, and run the following command in the CMD :
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass

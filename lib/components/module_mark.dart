@@ -29,7 +29,7 @@ class ModuleMark extends StatelessWidget {
                   LengthLimitingTextInputFormatter(2),  // two digits as a limit
                 ],
                 style: GoogleFonts.montserrat(
-                    fontSize: 16.0, color: Color(0xff525252)),
+                    fontSize: 16.0, color: const Color(0xff525252)),
                 controller: controller,
                 textAlign: TextAlign.center,    
                 decoration: InputDecoration(

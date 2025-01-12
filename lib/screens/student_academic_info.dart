@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:sabil/btns/add_btn.dart';
-import 'package:sabil/btns/next_btn.dart';
-import 'package:sabil/btns/student_gender.dart';
 import 'package:sabil/components/academic_details_list.dart';
 import 'package:sabil/components/add_student_header.dart';
 import 'package:sabil/components/module_mark.dart';
 import 'package:sabil/components/modules_selector.dart';
-import 'package:sabil/components/my_textfield.dart';
 import 'package:sabil/model/user_provider.dart';
 
 class StudentAcademicInfo extends StatefulWidget {
@@ -20,7 +17,7 @@ class StudentAcademicInfo extends StatefulWidget {
 
 class _StudentAcademicInfoState extends State<StudentAcademicInfo> {
   final TextEditingController _moduleMarkController = TextEditingController();
-  bool _isContainerVisible = false;
+  final bool _isContainerVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +126,7 @@ class _StudentAcademicInfoState extends State<StudentAcademicInfo> {
               height: 24.0,
             ),
             // the academic scores of the student
-            AcademicDetailsList()
+            const AcademicDetailsList()
           ],
         ),
       ),

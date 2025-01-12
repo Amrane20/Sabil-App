@@ -5,7 +5,7 @@ import 'package:sabil/model/user_provider.dart';
 
 class NextBtn extends StatelessWidget {
   final TextEditingController fullNameController;
-  NextBtn({super.key, required this.fullNameController});
+  const NextBtn({super.key, required this.fullNameController});
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +50,5 @@ class NextBtn extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

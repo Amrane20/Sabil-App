@@ -7,13 +7,16 @@ class MyTextfield extends StatelessWidget {
   final String hintText;
   final bool obscureText;
   final IconData iconField;
-  const MyTextfield(
-      {super.key,
-      required this.controller,
-      required this.hintText,
-      required this.obscureText,
-      this.iconField = Icons.mail_outline_outlined,
-      required this.icon});
+  final String? Function(String?)? validator;
+  const MyTextfield({
+    super.key,
+    required this.controller,
+    required this.hintText,
+    required this.obscureText,
+    this.iconField = Icons.mail_outline_outlined,
+    required this.icon,
+    this.validator,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +39,7 @@ class MyTextfield extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(0, 0, 16.0, 0),
                   child: Icon(
                     iconField,
-                    color: Color(0xff525252),
+                    color: const Color(0xff525252),
                   ),
                 )
               : const SizedBox.shrink(),
@@ -45,11 +48,13 @@ class MyTextfield extends StatelessWidget {
           // ),
           Expanded(
             child: TextFormField(
+              validator: validator,
               style: GoogleFonts.montserrat(
-                  fontSize: 16.0, color: Color(0xff525252)),
+                  fontSize: 16.0, color: const Color(0xff525252)),
               controller: controller,
               obscureText: obscureText,
               decoration: InputDecoration(
+                errorStyle: GoogleFonts.poppins(color: const Color(0xfff16467)),
                 hintText: hintText,
                 hintStyle: GoogleFonts.montserrat(
                     color: const Color(0xff525252),

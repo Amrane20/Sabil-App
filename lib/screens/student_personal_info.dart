@@ -22,7 +22,7 @@ class _StudentPersonalInfoState extends State<StudentPersonalInfo> {
     final user = Provider.of<UserProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffffffff),
+        backgroundColor: const Color(0xffffffff),
         title: Text(
           'Add a Student',
           style: GoogleFonts.poppins(

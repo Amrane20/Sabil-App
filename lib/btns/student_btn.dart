@@ -30,7 +30,7 @@ class StudentBtn extends StatelessWidget {
                   style: GoogleFonts.poppins(
                       fontSize: 18.0,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xffEFE6FD))),
+                      color: const Color(0xffEFE6FD))),
             ],
           ),
         ),

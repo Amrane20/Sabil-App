@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sabil/screens/admin_or_std.dart';
-import 'package:sabil/screens/login.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:sabil/model/user_provider.dart';
-import 'package:sabil/screens/onboarding.dart';
-import 'package:sabil/screens/student_academic_info.dart';
-import 'package:sabil/screens/student_personal_info.dart';
 
 // Define custom colors
 const Color primaryColor = Color(0xFF2B3990); // Royal Blue
@@ -21,7 +16,7 @@ void main() {
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
       ],
-      child: MyApp(),
+      child: const MyApp(),
     ),
   );
 }
@@ -55,7 +50,7 @@ class MyApp extends StatelessWidget {
           foregroundColor: Colors.white,
         ),
       ),
-      home: StudentAcademicInfo(),
+      home: const UserOptioln(),
     );
   }
 }

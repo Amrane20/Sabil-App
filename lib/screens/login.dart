@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'package:sabil/btns/login_btn.dart';
 import 'package:sabil/components/my_textfield.dart';
+import 'package:sabil/components/password_field.dart';
+import 'package:sabil/model/user_provider.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -62,16 +65,29 @@ class _LoginPageState extends State<LoginPage> {
                         obscureText: false,
                         iconField: Icons.mail,
                         icon: true,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'cannot be empty';
+                          }
+                          if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                            return 'needs a valid email';
+                          }
+                          return null;
+                        },
                       ),
                       const SizedBox(
                         height: 24.0,
                       ),
-                      MyTextfield(
+                      // MyTextfield(
+                      //   controller: _passwordController,
+                      //   hintText: '**************',
+                      //   obscureText: true,
+                      //   iconField: Icons.remove_red_eye,
+                      //   icon: true,
+                      // ),
+                      PasswordField(
                         controller: _passwordController,
                         hintText: '**************',
-                        obscureText: true,
-                        iconField: Icons.remove_red_eye,
-                        icon: true,
                       ),
                       const SizedBox(
                         height: 8.0,
@@ -96,6 +112,18 @@ class _LoginPageState extends State<LoginPage> {
                       LoginBtn(
                         email: _emailController.text,
                         password: _passwordController.text,
+                        onTaped: () {
+                          if (_formKey.currentState!.validate()) {
+                            final user = Provider.of<UserProvider>(context,
+                                listen: false);
+                            user.login(_emailController.text,
+                                _passwordController.text, context);
+                          }
+                          // final user =
+                          //     Provider.of<UserProvider>(context, listen: false);
+                          // user.login(
+                          //     _emailController.text, _passwordController.text);
+                        },
                       ),
                       const SizedBox(
                         height: 16.0,
@@ -132,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: 56.0,
                         decoration: BoxDecoration(
                             border: Border.all(
-                          color: Color(0xff290064),
+                          color: const Color(0xff290064),
                           width: 1.0,
                         )),
                         child: Row(

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:sabil/model/user_provider.dart';
 
 class AddBtn extends StatelessWidget {
   // final TextEditingController fullNameController;
@@ -58,6 +55,5 @@ class AddBtn extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }
